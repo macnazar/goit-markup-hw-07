@@ -1,0 +1,1394 @@
+/* ---Палітра кольорів--- */
+
+:root {
+  --Primary-brand-color: #4d5ae5;
+  --Pressed-state-color: #404bbf;
+  --Success-color: #31d0aa;
+  --Dark-color: #2e2f42;
+  --Text-color: #434455;
+  --Subtle-text-color: #8e8f99;
+  --Accent-color: #e7e9fc;
+  --Light-color: #f4f4fd;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---Скидання стилів--- */
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background: #ffffff;
+  color: var(--Dark-color);
+}
+
+.universal-title {
+  margin-bottom: 72px;
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: var(--Dark-color);
+}
+
+/* ================ Mobile css ============= */
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+@media screen and (min-width: 428px) {
+  .container {
+    width: 426px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 766px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1158px;
+  }
+}
+
+/* ------------------ Шапка сайту --------------- */
+/*------------------- Mobile Menu ----------------*/
+
+@media screen and (max-width: 768px) {
+  .header-list {
+    display: none;
+  }
+  .address-list {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-logo-link {
+    font-family: "Raleway";
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--Dark-color);
+    padding: 24px 0;
+  }
+
+  .header-logo-web {
+    color: var(--Primary-brand-color);
+  }
+
+  .header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border: 1px solid var(--Accent-color);
+    background-color: #ffffff;
+  }
+
+  .mobile-menu-burger {
+    padding: 0;
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+    line-height: 0;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-height: 796px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 80px 40px 40px;
+    background-color: #ffffff;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: auto;
+    transition: opacity 500ms linear, visibility 500ms linear;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border-radius: 50%;
+    background: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: backgroun-color 250ms var(--cubic), fill 250ms var(--cubic);
+  }
+
+  .mob-menu-social-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+  }
+
+  .mob-menu-social-link {
+    display: block;
+    background-color: var(--Primary-brand-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 250ms var(--cubic);
+  }
+  .social-icon-mob-menu {
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    fill: #ffffff;
+  }
+
+  .mob-menu-navs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .mob-menu-link {
+    width: 109px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: var(--Dark-color);
+  }
+
+  .phone,
+  .email {
+    display: block;
+  }
+
+  .phone {
+    margin-top: 250px;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.1;
+    color: var(--Text-color);
+  }
+  .email {
+    margin-top: 40px;
+    margin-bottom: 48px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--Text-color);
+  }
+
+  .mob-menu-link:hover,
+  .email:hover,
+  .phone:hover,
+  .mob-menu-link:focus,
+  .email:focus,
+  .phone:focus {
+    color: var(--Pressed-state-color);
+  }
+}
+
+/* ---------------- Hero Section Mobile ----------------- */
+
+.hero {
+  height: 428px;
+  max-width: 480px;
+
+  padding-top: 112px;
+  padding-bottom: 112px;
+  margin: 0 auto;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero-bg-mobile.jpg);
+
+  background-color: var(--Dark-color);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  text-align: center;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg-mobile@2x.jpg);
+  }
+}
+
+.hero-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+
+  max-width: 318px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-btn {
+  min-width: 169px;
+  margin-top: 48px;
+  padding: 16px 32px;
+  height: 56px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background-color: var(--Primary-brand-color);
+
+  border: 1px solid var(--Primary-brand-color);
+  border-radius: 4px;
+  transition: 250ms var(--cubic);
+  cursor: pointer;
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: var(--Pressed-state-color);
+  border-color: var(--Pressed-state-color);
+}
+
+/* -------- Modal Window Mobile --------- */
+
+.backdrop {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms var(--cubic), visibility 250ms var(--cubic);
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 408px;
+  height: 584px;
+  padding: 72px 24px 24px;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--cubic);
+}
+
+.backdrop.is-hidden .modal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #e7e9fc;
+  cursor: pointer;
+  transition: backgroun-color 250ms var(--cubic), fill 250ms var(--cubic);
+}
+
+.close-btn:is(:hover, :focus) {
+  background-color: var(--Primary-brand-color);
+  fill: #ffffff;
+}
+
+.close-icon {
+  width: 8px;
+  height: 8px;
+}
+
+/* --------- Modal Form Mobile -------- */
+
+.modal-title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--Dark-color);
+}
+.form {
+  text-align: left;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form-input:focus-visible,
+.comment:focus-visible {
+  outline: none;
+}
+
+.form-field:focus-within .form-input,
+.comment:focus-within,
+.form-field:focus-within .form-icon {
+  border-color: var(--Primary-brand-color);
+  fill: var(--Primary-brand-color);
+}
+
+.form-field {
+  position: relative;
+}
+
+.form-label {
+  margin-bottom: 4px;
+  display: flex;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  transition: fill 250ms var(--cubic);
+}
+
+.comment {
+  resize: none;
+  width: 360px;
+  height: 120px;
+  padding: 8px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms var(--cubic);
+}
+
+.comment::placeholder {
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.form-input {
+  width: 100%;
+  height: 36px;
+  padding-left: 38px;
+  outline: transparent;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms var(--cubic);
+}
+
+.policy-link {
+  color: var(--Primary-brand-color);
+  text-decoration: underline;
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid #2e2f42;
+  border-radius: 2px;
+  margin-right: 8px;
+  transition: background-color 250ms linear;
+  fill: transparent;
+}
+
+.checkbox:checked + .checkbox-icon {
+  background-color: var(--Primary-brand-color);
+  border: none;
+  fill: #ffffff;
+}
+
+.checkbox:hover,
+.checkbox:focus + .checkbox-icon {
+  border: 2px solid var(--Primary-brand-color);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #757575;
+}
+
+.btn-send {
+  display: block;
+  margin: auto;
+  min-width: 169px;
+  padding: 16px 32px;
+  background-color: var(--Primary-brand-color);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: var(--Primary-brand-color);
+  transition: background-color 250ms var(--cubic);
+}
+
+.btn-send:hover,
+.btn-send:focus {
+  background-color: var(--Pressed-state-color);
+}
+
+/* ------------- Секція наші переваги --------------- */
+/* ----------- Advantages Section Mobile ------------ */
+
+@media screen and (max-width: 767px) {
+  .advantages {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  .advantages-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 72px;
+  }
+  .advantages-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: var(--Dark-color);
+    margin-bottom: 8px;
+  }
+  .advantages-subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--Text-color);
+  }
+}
+
+/* -------------- Чим ми займаємось --------------- */
+/* ---------- Directions Section Mobile ----------- */
+
+@media screen and (max-width: 1200px) {
+  .directions {
+    display: none;
+  }
+}
+
+/* ------------ Секція наша команда ------------- */
+/* ------------ Team Section Mobile ------------- */
+
+@media screen and (max-width: 767px) {
+  .team {
+    padding-top: 96px;
+    padding-bottom: 128px;
+    background-color: var(--Light-color);
+  }
+  .mob-team {
+    display: flex;
+    flex-direction: column;
+  }
+  .team-item:not(:last-child) {
+    margin-bottom: 72px;
+  }
+}
+
+.team-item {
+  background: #ffffff;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-cards-text {
+  padding: 32px 0 32px 0;
+}
+
+.team-suptitle {
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--Dark-color);
+}
+
+.team-subtitle {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--Text-color);
+}
+
+/* ---------------- Соцмережі команди -------------- */
+/* ------------------- Social Team----------------- */
+
+.team-social-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.team-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--Primary-brand-color);
+  transition: 250ms var(--cubic);
+}
+
+.team-social-link:hover,
+.team-social-link:focus {
+  background-color: var(--Pressed-state-color);
+}
+
+.team-icon-social {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+
+/* ---------------- Наші клієнти -------------------- */
+/* ----------- Customers Section Mobile ------------ */
+
+@media screen and (max-width: 767px) {
+  .customers {
+    padding: 96px 0;
+  }
+  .customers-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 16px;
+    row-gap: 72px;
+  }
+}
+
+.customers-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 168px;
+  height: 88px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  transition: 250ms var(--cubic);
+}
+
+.customers-link:hover,
+.customers-link:focus {
+  border-color: var(--Pressed-state-color);
+}
+
+.customers-link:hover .customers-svg,
+.customers-link:focus .customers-svg {
+  fill: var(--Pressed-state-color);
+}
+
+.customers-svg {
+  width: 104px;
+  height: 56px;
+  fill: var(--Subtle-text-color);
+  transition: 250ms var(--cubic);
+}
+
+/* ----------------- Підвал сайту ------------------ */
+/* ----------------- Footer Mobile ---------------- */
+
+.footer {
+  background-color: var(--Dark-color);
+}
+
+.footer-logo-link {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+  font-family: "Raleway";
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.16;
+  color: var(--Light-color);
+}
+
+.footer-logo-web {
+  color: var(--Primary-brand-color);
+}
+
+.footer-subtitle {
+  margin-right: 120px;
+  width: 264px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--Accent-color);
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 96px 0px;
+  }
+  .mob-leveling {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 72px;
+  }
+  .footer-logo-link {
+    text-align: center;
+  }
+  .footer-logo-web {
+    text-align: center;
+  }
+  .footer-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-title {
+    display: block;
+    text-align: center;
+  }
+  .footer-email {
+    display: block;
+    margin: 0 auto;
+    max-width: 264px;
+  }
+  .btn-subscribe {
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-subscribe {
+    margin: 0;
+  }
+}
+
+/* ---------- Соціальні мережі футера ---------- */
+/* --------------- Social Footer --------------- */
+
+.footer-social-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer-title {
+  margin-bottom: 16px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.footer-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: 250ms var(--cubic);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--Success-color);
+}
+
+.footer-icon-social {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  fill: #ffffff;
+}
+
+/*------------ Форма на підписку ------------*/
+/* ------------- Form Subscribe ------------- */
+
+.footer-email {
+  height: 40px;
+  background-color: transparent;
+  padding: 8px 0px 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  transition: border 250ms var(--cubic);
+}
+
+.footer-email:focus-visible {
+  outline: none;
+  border: 1px solid #ffffff;
+}
+
+.footer-email::placeholder {
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-subscribe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 165px;
+  height: 40px;
+  background-color: var(--Primary-brand-color);
+  border: var(--Primary-brand-color);
+  border-radius: 4px;
+  padding: 8px 24px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  transition: background-color 250ms var(--cubic);
+}
+
+.btn-subscribe:is(:hover, :focus) {
+  background-color: var(--Pressed-state-color);
+  border: var(--Pressed-state-color);
+}
+
+.icon-plane {
+  width: 24px;
+  height: 24px;
+  margin-left: 16px;
+}
+
+/* -------------------- TABLET -------------------- */
+/* ----------------- TABLET HEADER ---------------- */
+
+@media screen and (min-width: 768px) {
+  .mobile-menu-burger,
+  .mobile-menu {
+    display: none;
+  }
+  .header {
+    border: 1px solid var(--Accent-color);
+    background-color: #ffffff;
+  }
+  .header-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0;
+  }
+  .header-logo-link {
+    font-family: "Raleway";
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.33;
+    color: var(--Dark-color);
+    margin-right: 120px;
+  }
+  .header-logo-web {
+    color: var(--Primary-brand-color);
+  }
+  .header-list {
+    display: flex;
+  }
+  .header-item:not(:last-child) {
+    margin-right: 40px;
+  }
+  .address-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--Dark-color);
+    transition: 250ms var(--cubic);
+    padding: 26px 0;
+  }
+  .header-address {
+    margin-left: auto;
+  }
+  .header-mail-link,
+  .header-tel-link {
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    color: var(--Text-color);
+    transition: 250ms var(--cubic);
+  }
+  .header-link:hover,
+  .header-mail-link:hover,
+  .header-tel-link:hover,
+  .header-link:focus,
+  .header-mail-link:focus,
+  .header-tel-link:focus {
+    color: var(--Pressed-state-color);
+  }
+
+  /* ------Синя лінія під посиланнями в хедері----- */
+
+  .header-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--Pressed-state-color);
+    border-radius: 2px;
+    opacity: 0;
+  }
+  .header-link.current::after {
+    opacity: 1;
+  }
+  .header-link.current:visited {
+    color: var(--Pressed-state-color);
+  }
+  .header-link.current {
+    position: relative;
+    color: var(--Pressed-state-color);
+  }
+
+  /* ----------------- TABLET HERO ----------------- */
+
+  .hero {
+    height: 436px;
+    max-width: 768px;
+    padding-bottom: 108px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg-tablet.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero-bg-tablet@2x.jpg);
+    }
+  }
+}
+
+/* ---------------- TABLET ADVANTAGES -------------- */
+
+@media screen and (min-width: 768px) {
+  .advantages {
+    padding: 96px 0px;
+  }
+  .advantages-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+  }
+  .advantages-title {
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: var(--Dark-color);
+  }
+  .advantages-subtitle {
+    width: 356px;
+    display: block;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--Text-color);
+  }
+}
+
+/* ----------- TABLET Team Section ---------- */
+
+@media screen and (min-width: 768px) {
+  .team {
+    padding-top: 96px;
+    padding-bottom: 104px;
+    background-color: var(--Light-color);
+  }
+  .team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 64px;
+    column-gap: 24px;
+  }
+}
+
+/* ----------- TABLET Customers Section ---------- */
+
+@media screen and (min-width: 768px) {
+  .customers {
+    padding: 96px 0;
+  }
+  .customers-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    max-width: 552px;
+    margin: 0 auto;
+  }
+}
+
+/* ----------- TABLET FOOTER ---------- */
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 96px 0;
+  }
+  .mob-leveling {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 582px;
+  }
+  .form-footer {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-social {
+    width: 264px;
+    height: 110px;
+  }
+  .footer-email {
+    width: 264px;
+  }
+  .footer-social-list {
+    justify-content: flex-start;
+  }
+  .subscribe-title {
+    margin-top: 72px;
+  }
+}
+
+/* ---------------------- Desktop ------------------------ */
+/* ======================================================= */
+
+@media screen and (min-width: 1200px) {
+  body {
+    padding-top: 73px;
+  }
+
+  .header {
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 72px;
+    z-index: 998;
+  }
+  .header-list {
+    padding: 24px 0;
+    margin-left: 76px;
+  }
+  .header-logo-link {
+    margin: 0;
+  }
+  .header-navigation {
+    padding: 0;
+  }
+  .header-link {
+    padding-bottom: 28px;
+  }
+  .address-list {
+    flex-direction: unset;
+    align-items: center;
+    gap: 40px;
+  }
+  .contacts {
+    padding: 24px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--Text-color);
+  }
+
+  /* ---------------- Desktop Hero Section --------------- */
+
+  .hero {
+    height: 600px;
+    max-width: 1440px;
+    padding-top: 188px;
+    padding-bottom: 188px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg-desk.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-section {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero-bg-desk@2.jpg);
+    }
+  }
+}
+/* ----------- Desktop Advantages Section -------------- */
+
+@media screen and (min-width: 1200px) {
+  .icon-strategy::before {
+    background-image: url(../images/icon-strategy.svg);
+  }
+  .icon-punctuality::before {
+    background-image: url(../images/icon-punctuality.svg);
+  }
+  .icon-diligence::before {
+    background-image: url(../images/icon-diligence.svg);
+  }
+  .icon-technologies::before {
+    background-image: url(../images/icon-technologies.svg);
+  }
+
+  .advantages {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .advantages-list {
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+
+  .advantages-item::before {
+    display: block;
+    content: "";
+    width: 264px;
+    height: 112px;
+    background-size: 64px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--Light-color);
+    border-radius: 4px;
+    margin: 0;
+  }
+
+  .advantages-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .advantages-subtitle {
+    font-weight: 400;
+    width: 264px;
+    height: 72px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--Text-color);
+    margin: 0;
+  }
+}
+/* ---------------- Desktop Directions Section --------------- */
+
+@media screen and (min-width: 1200px) {
+  .directions {
+    padding-top: 60px;
+    padding-bottom: 120px;
+  }
+  .directions-list {
+    display: flex;
+    gap: 24px;
+  }
+
+  /* ---------------- Desktop Team Section --------------- */
+
+  .team {
+    padding: 120px 0;
+  }
+
+  /* ----------- Desktop Customers Section --------- */
+  .customers {
+    padding: 120px 0;
+  }
+  .customers-list {
+    flex-wrap: nowrap;
+  }
+}
+
+/* ---------------- Desktop Footer --------------- */
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1158px;
+  }
+  .footer {
+    padding: 100px 0px;
+    background-color: var(--Dark-color);
+  }
+  .mob-leveling {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 1px;
+  }
+  .footer-social {
+    margin: 0;
+  }
+  .subscribe-title {
+    margin: 0 0 16px 0;
+  }
+  .footer-media {
+    margin-left: 120px;
+  }
+  .footer-subscribe {
+    margin-left: 80px;
+  }
+}
+
+/* -------------- Portfolio Page----------------- */
+/* ============================================= */
+
+/* --------- Меню проектів портфоліо ----------- */
+.portfolio-container {
+  max-width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.portfolio {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+.portfolio-list {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-item:not(:last-child) {
+  margin-right: 24px;
+}
+
+.portfolio-btn {
+  display: inline-block;
+  text-align: center;
+  min-width: 69px;
+  font-family: inherit;
+  padding: 12px 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--Primary-brand-color);
+  background-color: var(--Light-color);
+  border: 1px solid #e7e9fc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 250ms var(--cubic);
+}
+
+.portfolio-btn:hover,
+.portfolio-btn:focus {
+  color: #ffffff;
+  background-color: var(--Pressed-state-color);
+  border-color: var(--Pressed-state-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* ------------- Проекти портфоліо -------------- */
+
+.overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-title {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  background: var(--Primary-brand-color);
+  padding: 40px 32px 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms var(--cubic);
+}
+
+.projects-link:hover .overlay-title,
+.projects-link:focus .overlay-title {
+  transform: translateY(0%);
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 48px;
+  column-gap: 24px;
+  margin-top: 72px;
+}
+
+.projects-item:hover,
+.projects-item:focus {
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.projects-item {
+  transition: box-shadow 250ms var(--cubic);
+}
+
+.projects-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--Dark-color);
+}
+
+.projects-subtitle {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--Text-color);
+}
+
+.projects-border-cards {
+  display: block;
+  padding: 32px 0 32px 16px;
+  border: 1px solid var(--Accent-color);
+  /* border-width: 0 1px 1px 1px; */
+  border-top: none;
+}
